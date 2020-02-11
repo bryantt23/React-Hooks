@@ -113,23 +113,54 @@ const InputElement = () => {
     0: inputText,
     1: setInputText
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const {
+    0: historyList,
+    1: setHistoryList
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx("input", {
     placeholder: "Enter some text",
     onChange: e => {
       setInputText(e.target.value);
+      setHistoryList([...historyList, e.target.value]);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: undefined
-  }), inputText);
+  }), inputText, __jsx("hr", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }), __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, historyList.map(rec => {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: undefined
+    }, rec);
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (InputElement);
